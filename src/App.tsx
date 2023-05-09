@@ -49,13 +49,14 @@ function App() {
 
     <div className="App">
       
-
-      <input type="text" ref={newTodoRef} />
-      <button onClick={onAddTodo}>Input</button>
+      <input type="text"  ref={newTodoRef} placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
+      {/* <input type="text" ref={newTodoRef} /> */}
+      {/* <button className="btn btn-secondary">Button</button> */}
+      <button className="btn m-2 btn-outline" onClick={onAddTodo}>Input</button>
       {todos.map((todo) => (
         <div key={todo.id}>
           {todo.text}
-          <button onClick={() => dispatch({ type: "REMOVE", id: todo.id })}>
+          <button className="btn m-2 btn-outline" onClick={() => dispatch({ type: "REMOVE", id: todo.id })}>
             Clear
           </button>
         </div>
